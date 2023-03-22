@@ -1,0 +1,14 @@
+{
+  "name": "super-simple-node-svc",
+  "version": "1.0.0",
+  "description": "A demo service for GKE deployment ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "neil.ghosh@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
