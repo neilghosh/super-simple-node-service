@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-svc
+  template:
+    metadata:
+      labels:
+        app: frontend-svc
+    spec:
+      containers:
+      - image: gcr.io/demoneil/ccg-demo-frontend:latest
+        name: frontend-0
+        env:
+        - name: BACKEND_SVC_URL
+          value: "http://simple-lb-service.default.svc.cluster.local/"
