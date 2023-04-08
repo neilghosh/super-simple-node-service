@@ -17,10 +17,13 @@ async function getData(name) {
 }
 
 app.get('/', (req, res) => {
-    console.log('Request Received : ', req.query.name)
+    let name = req.query.name 
+    // name = name || process.env.DEFAULT_NAME || "Anonymous"
+    console.log('Request Received : ', name)
+
     let backendData;
     (async () => {
-        backendData = await getData(req.query.name);
+        backendData = await getData(name);
         res.write('<h1>');
         res.write(backendData);
         res.write('</h1>');
